@@ -3,19 +3,44 @@
  */
 package quotes;
 
+import java.io.File;
 import java.io.IOException;
 
 public class App {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+
+//        try {
+//            QuoteManager quoteManager = new QuoteManager("C:\\Users\\C-ROAD\\IdeaProjects\\quotes\\app\\src\\main\\resources\\recentquotes.json");
+//            Quote randomQuote = quoteManager.getRandomQuote();
+//            System.out.println("Quote: " + randomQuote.getText());
+//            System.out.println("Author: " + randomQuote.getAuthor());
+//        } catch (IOException e) {
+//            System.err.println("Error reading JSON file: " + e.getMessage());
+//        }
+
+        System.out.println("=======================================================================");
         try {
-            QuoteManager quoteManager = new QuoteManager("src/main/resources/recentquotes.json");
-            Quote randomQuote = quoteManager.getRandomQuote();
-            System.out.println("Quote: " + randomQuote.getText());
-            System.out.println("Author: " + randomQuote.getAuthor());
+
+            QuoteManager quoteManager=new QuoteManager("C:\\Users\\C-ROAD\\IdeaProjects\\quotes\\app\\src\\main\\resources\\quotesData.json");
+            Quote quote=quoteManager.fetchRandomQuoteFromApi();
+           System.out.println("Quote: " + quote.getBody());
+            System.out.println("Author: " + quote.getAuthor());
         } catch (IOException e) {
             System.err.println("Error reading JSON file: " + e.getMessage());
         }
+
+
+
+
+
+
+
+
     }
+
+
+
+
     }
